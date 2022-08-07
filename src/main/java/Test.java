@@ -19,6 +19,7 @@ public class Test {
         //System.out.println(HashMap.class.getName());
         System.out.println("asdnflasfasdf");
         System.out.println("hot-fix 2");
+        System.out.println("hot-fix 3");
     }
 }
 class HashMapChild extends HashMap{
