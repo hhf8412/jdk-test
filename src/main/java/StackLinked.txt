@@ -1,0 +1,43 @@
+public class StackLinked {
+    private Node head;
+    private Node curNode;
+    private Node preNode;
+    private int n;
+    private int curSize;
+    public StackLinked(int n){
+        this.n = n;
+        this.curSize = 0;
+    }
+    public boolean put(int a){
+        if(curSize == n) return false;
+        if(head == null){
+            curNode = head = new Node(a, null);
+            curSize++;
+            return true;
+        }
+        Node node = new Node(a, null);
+        curNode.next = node;
+        curSize++;
+        preNode = curNode;
+        curNode = curNode.next;
+        return true;
+    }
+    public int get(){
+        if(curSize == 0 || head == null) return -9999;
+        int returnInt = curNode.data;
+        if(preNode == null){
+            curNode = head = null;
+            curSize--;
+        }else{
+            preNode.next = null;
+        }
+    }
+}
+class Node{
+    int data;
+    Node next;
+    public Node(int data, Node next){
+        this.data = data;
+        this.next = next;
+    }
+}
